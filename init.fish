@@ -6,13 +6,13 @@ function __convert_color_to_designator
 
     for option in $argv
         switch "$option"
-            case black red green brown blue magenta cyan gray
+            case black red green brown blue magenta cyan grey
                 set foreground_color $option
             case "--background=*"
                 set -l IFS =
                 echo $option | read -l opt value
                 switch "$value"
-                    case black red green brown blue magenta cyan gray
+                    case black red green brown blue magenta cyan grey
                         set background_color $value
                     case "*"
                         set background_color default
@@ -39,7 +39,7 @@ function __convert_color_to_designator
             [ ! "$bold" = yes ]; and set foreground f; or set foreground F
         case cyan
             [ ! "$bold" = yes ]; and set foreground g; or set foreground G
-        case gray
+        case grey
             [ ! "$bold" = yes ]; and set foreground h; or set foreground H
         case "*"
             set foreground x
@@ -60,7 +60,7 @@ function __convert_color_to_designator
             set background f
         case cyan
             set background g
-        case gray
+        case grey
             set background h
         case "*"
             set background x
