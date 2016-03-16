@@ -95,5 +95,5 @@ function __lscolors -d 'Generate LSCOLORS for BSD'
     __convert_color_to_designator $dir_unsticky
 end
 
-set -x CLICOLOR 1
-set -x LSCOLORS (__lscolors)
+set -gx CLICOLOR 1
+set -gx LSCOLORS (__lscolors)
