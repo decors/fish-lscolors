@@ -6,8 +6,8 @@
 
 * colors
  * black, red, green, brown, blue, magenta, cyan
-* option
- * --backgroud=[color], --bold
+* options
+ * --background=[color], --bold
 
 ```fish
 set -g lscolors_directory blue
