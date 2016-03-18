@@ -1,4 +1,9 @@
-function lscolors -d 'Generate LSCOLORS for BSD'
+function lscolors -d 'Configure LSCOLORS for BSD and OS X ls'
+    set -gx CLICOLOR 1
+    set -gx LSCOLORS (lscolors::generate)
+end
+
+function lscolors::generate
     set -q lscolors_directory; and set directory $lscolors_directory; or set directory blue
     set -q lscolors_symlink; and set symlink $lscolors_symlink; or set symlink magenta
     set -q lscolors_socket; and set socket $lscolors_socket; or set socket green
