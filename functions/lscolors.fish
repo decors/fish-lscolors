@@ -1,6 +1,10 @@
 function lscolors -d 'Configure LSCOLORS for BSD and OS X ls'
     set -gx CLICOLOR 1
     set -gx LSCOLORS (lscolors::generate)
+
+    if [ ! "$argv[1]" = "--silent" ]
+        echo "LSCOLORS updated: `$LSCOLORS`"
+    end
 end
 
 function lscolors::generate
