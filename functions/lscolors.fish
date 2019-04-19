@@ -20,20 +20,20 @@ function lscolors::generate
     set -q lscolors_dir_sticky; and set dir_sticky $lscolors_dir_sticky; or set dir_sticky black --background=green
     set -q lscolors_dir_unsticky; and set dir_unsticky $lscolors_dir_unsticky; or set dir_unsticky black --background=brown
 
-    lscolors::convert_desighnator $directory
-    lscolors::convert_desighnator $symlink
-    lscolors::convert_desighnator $socket
-    lscolors::convert_desighnator $pipe
-    lscolors::convert_desighnator $executable
-    lscolors::convert_desighnator $block
-    lscolors::convert_desighnator $character
-    lscolors::convert_desighnator $exec_suid
-    lscolors::convert_desighnator $exec_sgid
-    lscolors::convert_desighnator $dir_sticky
-    lscolors::convert_desighnator $dir_unsticky
+    lscolors::convert $directory
+    lscolors::convert $symlink
+    lscolors::convert $socket
+    lscolors::convert $pipe
+    lscolors::convert $executable
+    lscolors::convert $block
+    lscolors::convert $character
+    lscolors::convert $exec_suid
+    lscolors::convert $exec_sgid
+    lscolors::convert $dir_sticky
+    lscolors::convert $dir_unsticky
 end
 
-function lscolors::convert_desighnator
+function lscolors::convert
 
     set -l foreground_color ''
     set -l background_color ''
